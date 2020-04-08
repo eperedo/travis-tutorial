@@ -1,0 +1,33 @@
+language: node_js
+# os: osx specify operatin system
+
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+
+node_js:
+  - "12"
+
+git:
+  depth: 3
+
+branches:
+  only:
+    - master
+    - production
+    - dev
+
+script:
+  - npm run build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GH_TOKEN
+  local-dir: dist/
+  target-branch: gh-pages
+  commit_message: "Sucessfull deploy from travis"
+  on:
+    branch: master
