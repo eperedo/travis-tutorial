@@ -34,6 +34,6 @@ script:
 
 deploy:
   provider: netlify
-  site: 3fe19af4-467a-49bd-b60f-c07c99411385
+  site: 60307073-3832-40ac-bbb3-8c768b4768a3
   auth: $NL_TOKEN
-  edge: true # opt in to dpl v2
+  # edge: true # opt in to dpl v2
