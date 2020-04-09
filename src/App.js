@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Deployed from Master with space message</p>
+        <p>This is the issue 3</p>
         <a
           className="App-link"
           href="https://reactjs.org"
