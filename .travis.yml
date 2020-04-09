@@ -21,6 +21,7 @@ before_install:
     fi
 
 script:
+  - echo "Hola $PRODNETLIFY"
   - npm install netlify-cli -g
   - npm run build
   - netlify deploy $PRODNETLIFY --dir=build --message=$TRAVIS_COMMIT_MESSAGE
