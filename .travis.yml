@@ -12,21 +12,22 @@ git:
   depth: 3
 
 script:
+  - npm install netlify-cli -g
   - npm run build
-
+  - netlify deploy --dir=build
 # stages:
 #   - name: deploy_prod
 #     if: branch = master
 #   - name: deploy
 #     if: branch = issue-1
 
-deploy:
-  provider: netlify
-  site: 60307073-3832-40ac-bbb3-8c768b4768a3
-  auth: $NL_TOKEN
-  dir: "build"
-  message: "Deploy from Travis"
-  edge: true
+# deploy:
+#   provider: netlify
+#   site: 60307073-3832-40ac-bbb3-8c768b4768a3
+#   auth: $NL_TOKEN
+#   dir: "build"
+#   message: "Deploy from Travis"
+#   edge: true
 # jobs:
 #   include:
 #     - stage: deploy_prod
