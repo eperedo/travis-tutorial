@@ -38,5 +38,5 @@ deploy:
   auth: $NL_TOKEN
   dir: "build"
   message: "Deploy from Travis"
-  production: true
-  edge: true # opt in to dpl v2
+  prod: true
+  edge: true
