@@ -19,7 +19,7 @@ script:
 #   - name: deploy_prod
 #     if: branch = master
 #   - name: deploy
-#     if: branch = issue-1
+#     if: branch = issue-2
 
 # deploy:
 #   provider: netlify
