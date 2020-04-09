@@ -34,6 +34,6 @@ script:
 
 deploy:
   provider: netlify
-  site: hungry-blackwell-9a0020
+  site: 3fe19af4-467a-49bd-b60f-c07c99411385
   auth: $NL_TOKEN
   edge: true # opt in to dpl v2
