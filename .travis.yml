@@ -21,13 +21,19 @@ branches:
 script:
   - npm run build
 
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   keep_history: true
+#   github_token: $GH_TOKEN
+#   local_dir: build/
+#   target_branch: gh-pages
+#   commit_message: "Sucessfull deploy from travis"
+#   on:
+#     branch: master
+
 deploy:
-  provider: pages
-  skip_cleanup: true
-  keep_history: true
-  github_token: $GH_TOKEN
-  local_dir: build/
-  target_branch: gh-pages
-  commit_message: "Sucessfull deploy from travis"
-  on:
-    branch: master
+  provider: netlify
+  site: hungry-blackwell-9a0020
+  auth: $NL_TOKEN
+  edge: true # opt in to dpl v2
