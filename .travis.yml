@@ -9,6 +9,10 @@ cache:
 node_js:
   - "12"
 
+env:
+  global:
+    - IS_PRODUCTION=false
+
 git:
   depth: 3
 
@@ -20,9 +24,9 @@ branches:
 
 before_install:
   - if [[ $TRAVIS_BRANCH == "master" ]]; then
-    export IS_PRODUCTION=true;
+    IS_PRODUCTION=true;
     else
-    export IS_PRODUCTION=false;
+    IS_PRODUCTION=false;
     fi
 
 script:
@@ -45,5 +49,5 @@ deploy:
   auth: $NL_TOKEN
   dir: "build"
   message: "Deploy from Travis"
-  prod: IS_PRODUCTION
+  prod: $IS_PRODUCTION
   edge: true
