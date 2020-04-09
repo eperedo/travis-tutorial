@@ -37,4 +37,6 @@ deploy:
   site: 60307073-3832-40ac-bbb3-8c768b4768a3
   auth: $NL_TOKEN
   dir: "build"
+  message: "Deploy from Travis"
+  production: true
   edge: true # opt in to dpl v2
