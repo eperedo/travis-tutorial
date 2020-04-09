@@ -11,12 +11,6 @@ node_js:
 git:
   depth: 3
 
-branches:
-  only:
-    - master
-    - production
-    - dev
-
 # script:
 #   - npm run build
 
