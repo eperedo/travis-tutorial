@@ -18,6 +18,13 @@ branches:
     - production
     - dev
 
+before_install:
+  - if [[ $TRAVIS_BRANCH == "master" ]]; then
+    export IS_PRODUCTION=true;
+    else
+    export IS_PRODUCTION=false;
+    fi
+
 script:
   - npm run build
 
@@ -38,5 +45,5 @@ deploy:
   auth: $NL_TOKEN
   dir: "build"
   message: "Deploy from Travis"
-  prod: true
+  prod: IS_PRODUCTION
   edge: true
