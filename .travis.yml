@@ -5,16 +5,25 @@ cache:
     - node_modules
     - ~/.npm
 
+env:
+  global:
+    - PRODNETLIFY=false
+
 node_js:
   - "12"
 
 git:
   depth: 3
 
+before_install:
+  - if [[ $TRAVIS_BRANCH == "master" ]]; then
+    PRODNETLIFY=true;
+    fi
+
 script:
   - npm install netlify-cli -g
   - npm run build
-  - netlify deploy --dir=build --message=$TRAVIS_COMMIT_MESSAGE
+  - netlify deploy --prod=$PRODNETLIFY --dir=build --message=$TRAVIS_COMMIT_MESSAGE
 # stages:
 #   - name: deploy_prod
 #     if: branch = master
