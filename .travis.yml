@@ -25,6 +25,7 @@ script:
   - npm install netlify-cli -g
   - npm run build
   - netlify deploy $PRODNETLIFY --dir=build --message="$TRAVIS_COMMIT_MESSAGE"
+  - echo "netlify deploy $PRODNETLIFY"
 # stages:
 #   - name: deploy_prod
 #     if: branch = master
