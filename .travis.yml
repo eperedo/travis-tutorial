@@ -18,7 +18,7 @@ stages:
   - name: deploy_prod
     if: branch = master
   - name: deploy
-    if: branch != master
+    if: branch = issue-1
 
 jobs:
   include:
