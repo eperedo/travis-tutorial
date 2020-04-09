@@ -17,7 +17,7 @@ git:
 
 before_install:
   - if [[ $TRAVIS_BRANCH == "master" ]]; then
-    PRODNETLIFY=--prod;
+    PRODNETLIFY="--prod=true";
     fi
 
 script:
