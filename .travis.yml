@@ -21,7 +21,7 @@ before_install:
     fi
 
 script:
-  - echo "Build creado desed la rama $TRAVIS_BRANCH con mensaje $TRAVIS_COMMIT_MESSAGE"
+  - echo "Build creado desde la rama $TRAVIS_BRANCH con mensaje $TRAVIS_COMMIT_MESSAGE"
   - npm install netlify-cli -g
   - npm run build
   - netlify deploy $PRODNETLIFY --dir=build --message="$TRAVIS_COMMIT_MESSAGE"
